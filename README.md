@@ -1,12 +1,9 @@
-# React + Vite
+# Frontend 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+## useContext hook
+Devido à forma como o código foi estruturado dentro do nosso projeto, temos que dois componentes, vizinhos, dividem um mesmo estado  e pois a entrada de dados em um deles, de forma a ser submetida por meio de um formulário, modifica a forma como a exibição dos dados do  outro componente se comporta, podendo ser maior, menor, com diferentes tipos de dados e vice-versa. Portanto, temos em vista a necessidade desses dois elementos compartilharem entre si, um estado de informação, de forma que para melhor experiência de usabilidade do usuário, a página não seja carregada a todo momento que um novo registro dentro da nossa plataforma é feito, pois pode incomodar, e "quebrar o fluxo de envio de dados" que pode ser feito de forma sequêncial, devido à necessidade da espera da atualização da página, para a efetivação de um novo registro. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Com esses problemas em vista, temos que o hook do react `useContext` pode ser uma solução eficiente dentro do ambiente o qual foi estipulado dentro da nossa problemática. Temos a necessidade como foi observado de criar um estado que pode ser usado pelos dois. Linguagens como o flutter tem o conceito de **Provider**, que é um gerenciador de Estados, de forma que podem ser compartilhados e modificados de forma global, mas que são centralizados dentro de um único centro. Temos que por definição, o useContext pode ser entendido como:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+> *useContext is a React Hook that lets you read and subscribe to context from your component. Context lets a parent component provide data to the entire tree below it. There are many uses for context.*
